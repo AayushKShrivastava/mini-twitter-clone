@@ -47,6 +47,7 @@ export default function PostModal({mode, toggle, text, post_id}) {
       }
       
       if(response.status === 'SUCCESS'){
+        handleClose()
         window.location.reload()
       }
       else{
