@@ -1,11 +1,11 @@
-# mini-twitter-clone
+# Mini Twitter Clone
 A full stack social networking application
 
 ## Deployed link
 https://twitter-clone-aks.netlify.app/
 
 ## Features
-- View the recent twwets/post shared the people user follows
+- View the recent tweets/post shared the people user follows
 - Sign up using unique username and password
 - Login using the registered username and password, with Json Web Token (JWT) authentication
 - Logout whenever user wants to
@@ -39,8 +39,8 @@ https://twitter-clone-aks.netlify.app/
 - React
 - MongoDb Atlas
 - Mongoose
-- cyclic.sh
-- Netlify
+- cyclic.sh for backend deployment
+- Netlify for frontend deployment
 - bcrypt
 - Json Web token
 
