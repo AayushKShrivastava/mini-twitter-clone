@@ -64,7 +64,7 @@ export default function PostsContainer({showPeople, people, profile, searchQuery
         <Container maxWidth="sm" sx={{marginTop: "100px"}}>
           {profile && <Profile showFollowees={(val) => showPeople(val)} posts_count={posts.length} current_user={current_user} followees_count={users.length}/>}
           {people && users.map((user, idx) => <People key={idx} user={user} reload={() => setReload(!reload)}/>)}
-          {!people && posts.map((post, idx) => <Post key={idx} post={post} profile={profile}/>)}
+          {!people && posts.map((post, idx) => <Post key={idx} post={post} profile={profile} reload={() => setReload(!reload)}/>)}
         </Container>
       </React.Fragment>
     </div>

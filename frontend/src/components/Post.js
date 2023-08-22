@@ -7,7 +7,7 @@ import PostModal from './PostModal';
 import API from '../api/api';
 import { constants } from '../constants/constants';
 
-export default function Post({ post, profile }) {
+export default function Post({ post, profile, reload }) {
 
   const formatDate = (inputDate) => {
     const date = new Date(inputDate);
@@ -37,8 +37,8 @@ export default function Post({ post, profile }) {
     if (response.status !== 'SUCCESS') {
       alert('Tweet deletion failed!')
     }
-    window.location.reload()
     handleMenuClose()
+    reload()
   }
 
   const renderMenu = (
@@ -105,7 +105,7 @@ export default function Post({ post, profile }) {
         </Typography>
       </CardContent>
       {renderMenu}
-      {postModalOpen && <PostModal mode='edit' toggle = {()=>setPostModalOpen(false)} text={post.content} post_id={post._id}/>}
+      {postModalOpen && <PostModal mode='edit' toggle = {()=>setPostModalOpen(false)} text={post.content} post_id={post._id} reload={() => reload()}/>}
     </Card>
   );
 }

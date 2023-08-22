@@ -27,8 +27,7 @@ class API {
       headers: myHeaders,
       body: JSON.stringify(body),
       withCredntials: true,
-      credentials: 'include',
-      redirect: 'follow'
+      credentials: 'include'
     }
 
     try {
@@ -60,8 +59,7 @@ class API {
       headers: myHeaders,
       body: JSON.stringify(body),
       withCredntials: true,
-      credentials: 'include',
-      redirect: 'follow'
+      credentials: 'include'
     }
 
     try {
@@ -93,8 +91,7 @@ class API {
       headers: myHeaders,
       body: JSON.stringify(body),
       withCredntials: true,
-      credentials: 'include',
-      redirect: 'follow'
+      credentials: 'include'
     }
 
     try {

@@ -53,7 +53,7 @@ export default function Navbar({showPeople, showProfile, searchQuery, current_us
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const [postModalOpen, setPostModalOpen] = useState(false);
   const [search, setSearch] = useState('')
-
+  
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -263,7 +263,7 @@ export default function Navbar({showPeople, showProfile, searchQuery, current_us
           </Box>
         </Toolbar>
       </AppBar>
-      {postModalOpen && <PostModal mode='create' toggle = {()=>setPostModalOpen(false)} text=""/>}
+      {postModalOpen && <PostModal mode='create' toggle = {()=>setPostModalOpen(false)} text="" reload={() => navigate('/')}/>}
       {renderMobileMenu}
       {renderMenu}
     </Box>

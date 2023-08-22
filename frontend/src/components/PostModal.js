@@ -18,7 +18,7 @@ const style = {
   pb: 3,
 };
 
-export default function PostModal({mode, toggle, text, post_id}) {
+export default function PostModal({mode, toggle, text, post_id, reload}) {
   const [open, setOpen] = useState(true);
   const [content, setContent] = useState(text)
   const [contentError, setContentError] = useState(false)
@@ -28,7 +28,9 @@ export default function PostModal({mode, toggle, text, post_id}) {
     toggle();
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
     if(content === '') {
       setContentError(true);
     }
@@ -48,7 +50,7 @@ export default function PostModal({mode, toggle, text, post_id}) {
       
       if(response.status === 'SUCCESS'){
         handleClose()
-        window.location.reload()
+        reload()
       }
       else{
         alert('Tweet update failed')
