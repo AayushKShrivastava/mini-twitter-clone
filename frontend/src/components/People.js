@@ -9,11 +9,14 @@ export default function People({user, reload}) {
     const requestBody = {
       followee_id: user._id 
     }
+
+    var response;
+
     if(user.followee) {
-      var response = await API.post(constants.UNFOLLOW_URL, requestBody)
+      response = await API.post(constants.UNFOLLOW_URL, requestBody)
     }
     else {
-      var response = await API.post(constants.FOLLOW_URL, requestBody)
+      response = await API.post(constants.FOLLOW_URL, requestBody)
     }
     if(response.status === 'SUCCESS'){
       reload();

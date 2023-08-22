@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom"
 import API from "../api/api";
@@ -21,6 +21,7 @@ export default function Signup() {
     setPasswordError(false)
     setConfirmPasswordError(false)
     navigate('/')
+    window.location.reload()
   }
 
   const handleSubmit = async (event) => {

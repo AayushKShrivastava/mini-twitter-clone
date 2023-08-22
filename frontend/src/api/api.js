@@ -1,5 +1,3 @@
-const { constants } = require("../constants/constants")
-
 class API {
   static async get(url) {
     var requestOptions = {
@@ -12,11 +10,6 @@ class API {
       var response = await fetch(url, requestOptions)
       response = await response.text()
       response = await JSON.parse(response)
-
-      // if (response.status === "SUCCESS")
-      //     return response
-      // else 
-      //     return "Error!"
       return response
     }
     catch(err) {

@@ -37,6 +37,7 @@ function App() {
               showProfile={()=> setShowProfile(true)} 
               searchQuery={(query) => setSearch(query)} 
               current_user={current_user}
+              updateCurrentUser={() => setCurrentUser()}
               key={3}
             />, 
             <PostsContainer 
@@ -52,6 +53,7 @@ function App() {
               showProfile={()=> setShowProfile(true) } 
               searchQuery={(query) => setSearch(query)} 
               current_user={current_user}
+              updateCurrentUser={() => setCurrentUser(null)}
               key={6}
             />, 
             <PostsContainer 

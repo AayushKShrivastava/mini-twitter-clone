@@ -1,17 +1,17 @@
 const constants = {
-  FEED_URL: "http://localhost:3002/user/timeline",
-  SIGNUP_URL: "http://localhost:3002/auth/signup",
-  LOGOUT_URL: "http://localhost:3002/auth/logout",
-  LOGIN_URL: "http://localhost:3002/auth/login",
-  CREATE_POST_URL: "http://localhost:3002/posts",
-  USER_POSTS_URL: "http://localhost:3002/posts",
-  GET_USERS_URL: "http://localhost:3002/user/people",
-  FOLLOW_URL: "http://localhost:3002/user/follow",
-  UNFOLLOW_URL: "http://localhost:3002/user/unfollow",
-  GET_USER_INFO_URL: "http://localhost:3002/user",
-  FOLLOWEES_URL: "http://localhost:3002/user/followees",
-  EDIT_POST_URL: "http://localhost:3002/posts/",
-  DELETE_POST_URL: "http://localhost:3002/posts/"
+  FEED_URL: "https://zany-gray-fly-tam.cyclic.cloud/user/timeline",
+  SIGNUP_URL: "https://zany-gray-fly-tam.cyclic.cloud/auth/signup",
+  LOGOUT_URL: "https://zany-gray-fly-tam.cyclic.cloud/auth/logout",
+  LOGIN_URL: "https://zany-gray-fly-tam.cyclic.cloud/auth/login",
+  CREATE_POST_URL: "https://zany-gray-fly-tam.cyclic.cloud/posts",
+  USER_POSTS_URL: "https://zany-gray-fly-tam.cyclic.cloud/posts",
+  GET_USERS_URL: "https://zany-gray-fly-tam.cyclic.cloud/user/people",
+  FOLLOW_URL: "https://zany-gray-fly-tam.cyclic.cloud/user/follow",
+  UNFOLLOW_URL: "https://zany-gray-fly-tam.cyclic.cloud/user/unfollow",
+  GET_USER_INFO_URL: "https://zany-gray-fly-tam.cyclic.cloud/user",
+  FOLLOWEES_URL: "https://zany-gray-fly-tam.cyclic.cloud/user/followees",
+  EDIT_POST_URL: "https://zany-gray-fly-tam.cyclic.cloud/posts/",
+  DELETE_POST_URL: "https://zany-gray-fly-tam.cyclic.cloud/posts/"
 }
 
 module.exports = {constants}

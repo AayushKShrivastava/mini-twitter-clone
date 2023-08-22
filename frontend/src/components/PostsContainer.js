@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
+import { CssBaseline, Container } from '@mui/material';
 import Post from './Post';
 import People from './People';
 import Profile from './Profile';
@@ -56,7 +55,7 @@ export default function PostsContainer({showPeople, people, profile, searchQuery
       }
       fetchUsersData();
     }
-  }, [searchQuery, reload, people, profile, current_user])
+  }, [searchQuery, reload, people, profile, current_user, navigate])
 
   return (
     <div style={{display: 'flex'}}>

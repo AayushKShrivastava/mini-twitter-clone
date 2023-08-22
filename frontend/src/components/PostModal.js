@@ -1,9 +1,6 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import CardMedia from '@mui/material/CardMedia';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import React, { useState } from 'react';
+import { Box, Modal, TextField, Button } from '@mui/material';
+// import CardMedia from '@mui/material/CardMedia';
 import API from '../api/api';
 import { constants } from '../constants/constants';
 
@@ -22,9 +19,9 @@ const style = {
 };
 
 export default function PostModal({mode, toggle, text, post_id}) {
-  const [open, setOpen] = React.useState(true);
-  const [content, setContent] = React.useState(text)
-  const [contentError, setContentError] = React.useState(false)
+  const [open, setOpen] = useState(true);
+  const [content, setContent] = useState(text)
+  const [contentError, setContentError] = useState(false)
 
   const handleClose = () => {
     setOpen(false);
@@ -40,11 +37,13 @@ export default function PostModal({mode, toggle, text, post_id}) {
         content: content
       }
 
+      var response;
+
       if (mode === 'create') {
-        var response = await API.post(constants.CREATE_POST_URL, requestBody)
+        response = await API.post(constants.CREATE_POST_URL, requestBody)
       }
       else if (mode === 'edit') {
-        var response = await API.put(constants.EDIT_POST_URL+post_id, requestBody)
+        response = await API.put(constants.EDIT_POST_URL+post_id, requestBody)
       }
       
       if(response.status === 'SUCCESS'){

@@ -1,20 +1,7 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import AdbIcon from '@mui/icons-material/Adb';
-import Avatar from '@mui/material/Avatar';
-import LogoutIcon from '@mui/icons-material/Logout';
-import Button from '@mui/material/Button';
+import { AppBar, Box, Toolbar, IconButton, Typography, InputBase, MenuItem, Menu, Avatar, Button } from '@mui/material';
+import {Search as SearchIcon, AccountCircle, AddCircle as AddCircleIcon, Adb as AdbIcon, Logout as LogoutIcon } from '@mui/icons-material';
 import PostModal from './PostModal';
 import { red } from '@mui/material/colors';
 import {useNavigate} from "react-router-dom";
@@ -61,11 +48,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar({showPeople, showProfile, searchQuery, current_user}) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const [postModalOpen, setPostModalOpen] = React.useState(false);
-  const [search, setSearch] = React.useState('')
+export default function Navbar({showPeople, showProfile, searchQuery, current_user, updateCurrentUser}) {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
+  const [postModalOpen, setPostModalOpen] = useState(false);
+  const [search, setSearch] = useState('')
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -111,6 +98,7 @@ export default function Navbar({showPeople, showProfile, searchQuery, current_us
     var response = await API.get(constants.LOGOUT_URL)
     
     if(response.status === 'SUCCESS') {
+      updateCurrentUser()
       navigate('/login')
     }
   }

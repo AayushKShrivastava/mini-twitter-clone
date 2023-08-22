@@ -1,17 +1,8 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import React, { useState } from 'react';
+import { Card, CardHeader, CardContent, Avatar, IconButton, Typography, Menu, MenuItem } from '@mui/material';
+// import CardMedia from '@mui/material/CardMedia';
 import { red } from '@mui/material/colors';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { MoreVert as MoreVertIcon, Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import PostModal from './PostModal';
 import API from '../api/api';
 import { constants } from '../constants/constants';
@@ -25,8 +16,8 @@ export default function Post({ post, profile }) {
     return date.toLocaleDateString('en-US', options);
   }
 
-  const [menuOpen, setMenuOpen] = React.useState(false)
-  const [postModalOpen, setPostModalOpen] = React.useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [postModalOpen, setPostModalOpen] = useState(false);
 
   const handleMenuOpen = () => {
     setMenuOpen(true)
@@ -52,12 +43,10 @@ export default function Post({ post, profile }) {
 
   const renderMenu = (
     <Menu
-      // anchorEl={anchorEl}
       anchorOrigin={{
         vertical: 'center',
         horizontal: 'right',
       }}
-      // id={menuId}
       keepMounted
       transformOrigin={{
         vertical: 'center',
