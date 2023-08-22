@@ -31,7 +31,7 @@ module.exports.signup = async (req, res) => {
     }
 
     const token = create_token(user._id)
-    res.cookie('user-token', token, { httpOnly: true, maxAge: expiry * 1000 })
+    res.cookie('user-token', token, { httpOnly: true, maxAge: expiry * 1000, sameSite: 'none' })
     res.status(201).json(response_data)
   }
   catch(err) {
@@ -62,7 +62,7 @@ module.exports.login = async (req, res) => {
     }
 
     const token = create_token(user._id)
-    res.cookie('user-token', token, { httpOnly: true, maxAge: expiry * 1000 })
+    res.cookie('user-token', token, { httpOnly: true, maxAge: expiry * 1000, sameSite: 'none' })
     res.status(200).json(response_data)
   }
   catch(err) {
