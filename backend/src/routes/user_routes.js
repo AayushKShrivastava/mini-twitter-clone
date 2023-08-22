@@ -7,5 +7,7 @@ router.post('/follow', require_auth, user_controller.follow)
 router.post('/unfollow', require_auth, user_controller.unfollow)
 router.get('/followees', require_auth, user_controller.followees)
 router.get('/timeline', require_auth, user_controller.timeline)
+router.post('/people', require_auth, user_controller.users)
+router.get('/', require_auth, user_controller.get_info)
 
 module.exports = router

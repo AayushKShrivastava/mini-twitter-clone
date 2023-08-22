@@ -1,6 +1,8 @@
 const constants = require("../constants/constants")
 const DatabaseConnectionService = require("../db/services/database_connection_service")
 const Post = require("../models/post")
+const User = require("../models/user")
+const { post } = require("../routes/user_routes")
 
 module.exports.create_post = async (req, res) => {
   const { content } = req.body
@@ -106,16 +108,22 @@ module.exports.user_posts = async (req, res) => {
       user_id: req.user._id
     }
     
-    var posts = await Post.find(post_details)
-    
+    let posts = await Post.find(post_details)
+    const user_ids = posts.map(post => post.user_id)
+    const users = await User.find({_id: user_ids})
+
+    posts = posts.map(post => {
+      const user = users.find(user => user._doc._id.valueOf() === post.user_id)
+      return {...post._doc, username: user._doc.username}
+    })
     var response_data = {
       status: constants.SUCCESS,
-      posts: posts
+      data: posts
     }
   
     res.status(200).json(response_data)
   }
-  catch {
+  catch (err) {
     var response_data = {
       status : constants.FAILURE,
       error : {
