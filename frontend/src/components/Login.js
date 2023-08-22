@@ -78,7 +78,7 @@ export default function Login() {
             variant="outlined"
             color="secondary"
             type="username"
-            sx={{mb: 3}}
+            sx={{mb: 3, mt: 3}}
             fullWidth
             value={username}
             error={usernameError}
@@ -97,6 +97,7 @@ export default function Login() {
           />
           <Button variant="outlined" color="secondary" type="submit">Login</Button>
         </form>
+        <br />
         <small>Need an account? <Link to="/signup">Register here</Link></small>
       </Box>
     </div>

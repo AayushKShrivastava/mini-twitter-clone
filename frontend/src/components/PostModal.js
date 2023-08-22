@@ -66,7 +66,7 @@ export default function PostModal({mode, toggle, text, post_id, reload}) {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box sx={{ ...style, width: 400 }}>
+        <Box sx={{ ...style, width: 400, height: 300 }}>
           {/* <CardMedia
             component="img"
             height="194"
@@ -77,8 +77,8 @@ export default function PostModal({mode, toggle, text, post_id, reload}) {
             placeholder="Write something..."
             multiline
             required
-            rows={4}
-            sx={{width: "100%", margin: '5px 0px'}}
+            rows={6}
+            sx={{width: "100%", margin: '20px 0px'}}
             value={content}
             onChange={(e) => setContent(e.target.value)}
             error={contentError}

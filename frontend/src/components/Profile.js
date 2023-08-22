@@ -11,8 +11,20 @@ export default function Profile({showFollowees, posts_count, current_user, follo
     showFollowees(false);
   }
 
+  const style = { 
+    mx: 'auto', 
+    height: "200px", 
+    padding:'20px', 
+    display: 'flex', 
+    flexDirection: "column", 
+    justifyContent: "space-between", 
+    alignItems: "center", 
+    gap: "10px", 
+    border: "2px solid #3498db"
+  }
+
   return (
-    <div style={{ mx: 'auto', height: "200px", padding:'20px', display: 'flex', flexDirection: "column", justifyContent: "space-between", alignItems: "center", gap: "10px", border: "2px solid #3498db"}}>
+    <div style={style}>
       <Avatar sx={{ bgcolor: red[500] }}>
         {current_user && current_user.username[0]}
       </Avatar>
@@ -20,7 +32,7 @@ export default function Profile({showFollowees, posts_count, current_user, follo
       {current_user?.username}
       </Typography>
 
-      <Button variant="outlined" style={{display: "flex", justifyContent: 'space-between', width: '150px'}} onClick={handleFollowingClick}>
+      <Button variant="outlined" style={{display: "flex", justifyContent: 'space-between', width: '150px', color: 'red'}} onClick={handleFollowingClick}>
         <Typography variant="body2" color="text.secondary">
           Following
         </Typography>
